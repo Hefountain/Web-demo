@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+  <title>鼠标靠近放大选区效果</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: rgb(22,55,85) url(images/bgImgae.png) repeat-x 0 0;
+      font-family: Arial;
+    }
+    ul {
+      width: 900px;
+      padding: 0 30px;
+      margin: 50px auto;
+    }
+    ul li {
+      float: left;
+      list-style: none;
+      padding: 19px;
+      width: 180px;
+      background-color: white;
+      border: 1px solid rgba(223, 231, 239, 0.7);
+      color: rgb(32, 40, 48);
+      text-shadow: 0 1px 1px rgb(255, 255, 255);
+      font-size: 14px;
+      transition: all .2s ease;
+    }
+
+    ul li:hover {
+      -moz-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+
+      -moz-border-radius: 8px;
+      -webkit-border-radius: 8px;
+      border-radius: 8px;
+
+      -moz-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.5);
+      -webkit-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    ul li h4 {
+      height: 40px;
+      margin-bottom: 15px;
+      line-height: 40px;
+      font-size: 16px;
+      text-align: center;
+      border-bottom: 1px solid rgba(223, 231, 239, 0.7);
+    }
+
+    ul li p{
+      text-align: center;
+    }
+
+    ul li p.btn a {
+      display: inline-block;
+      padding: 10px 40px;
+      margin-top: 15px;
+      text-shadow: 0 1px 1px rgba(32, 40, 48, 0.8);
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      background-color: rgb(229, 195, 85);
+
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 10px;
+
+      background-image: -webkit-linear-gradient(top,rgb(229, 195, 85), rgb(187, 160, 71));
+      background-image: -moz-linear-gradient(top,rgb(229, 195, 85), rgb(187, 160, 71));
+      background-image: linear-gradient(top,rgb(229, 195, 85), rgb(187, 160, 71));
+
+      transition: all 0.2s ease;
+    }
+
+    ul li p.btn a:hover {
+      -webkit-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.5);
+    }
+
+   #n {
+     margin: 10px auto;
+     width: 920px;
+     border: 1px solid white;
+     font-size: 12px;
+     line-height: 30px;
+   }
+   #n a {
+     color: white;
+     padding: 0 4px;
+   }
+  </style>
+</head>
+
+<body>
+   <!-- 实例代码开始-->
+   <p>&nbsp;</p>
+
+   <ul class="ulpart">
+     <li>
+       <h4>今日新闻</h4>
+       <p>四川的秋天为何如此靓丽</p>
+       <p>广东也有个香格里拉</p>
+       <p>探秘酒泉卫星发射场</p>
+       <p class="btn"><a href="#">按钮</a></p>
+     </li>
+     <li>
+       <h4>今日新闻</h4>
+       <p>泰国丧不影响正常旅行</p>
+       <p>姐妹在柬埔寨曲折离奇事</p>
+       <p>塔斯马尼亚萌宠</p>
+       <p class="btn"><a href="#">按钮</a></p>
+     </li>
+     <li>
+       <h4>今日新闻</h4>
+       <p>在华欣海滩骑马真带劲儿</p>
+       <p>巴厘岛留下的爱情蜜糖</p>
+       <p>苏州热门景点门票</p>
+       <p class="btn"><a href="#">按钮</a></p>
+     </li>
+     <li>
+       <h4>今日新闻</h4>
+       <p>巴赫抵日商讨奥运会事宜</p>
+       <p>新加坡自由行当地游特价</p>
+       <p> 一刻知秋 带着媳妇去旅行</p>
+       <p class="btn"><a href="#">按钮</a></p>
+     </li>
+   </ul>
+
+</body>
+</html>
