@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>选项卡</title>
+  <style>
+    #div1 .active{
+      background: yellow;
+    }
+    #div1 div {
+      width: 200px;
+      height: 200px;
+      background: #CCC;
+      border: 1px solid #999;
+      display: none;
+    }
+  </style>
+  <script>
+  window.onload = function() {
+    var oDiv = document.getElementById('div1');
+    var aBtn = oDiv.getElementsByTagName('input');
+    var aDiv = oDiv.getElementsByTagName('div');
+
+    for (var i = 0; i < aBtn.length; i++) {
+      aBtn[i].index = i;
+      aBtn[i].onclick = function() {
+        // 首先让所有的按钮都为非选中状态
+        for (var i = 0; i < aBtn.length; i++) {
+          aBtn[i].className = '';
+          aDiv[i].style.display = 'none';
+        }
+        this.className = 'active';
+        aDiv[this.index].style.display = 'block';
+      };
+    }
+  };
+  </script>
+</head>
+<body>
+  <div id="div1">
+    <input class="active" type="button" value="教育" />
+    <input type="button" value="培训" />
+    <input type="button" value="招生" />
+    <input type="button" value="出国" />
+    <div style="display:block;">1、所有麻烦，都来自于它的极度畅销。</div>
+    <div>2、所有麻烦，都来自于它的极度畅销。</div>
+    <div>3、所有麻烦，都来自于它的极度畅销。</div>
+    <div>4、所有麻烦，都来自于它的极度畅销。</div>
+  </div>
+</body>
+</html>
