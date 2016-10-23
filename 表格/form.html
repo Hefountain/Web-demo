@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>设计可用的表单</title>
+<style>
+
+body {
+	font-family: "宋体" arial, helvetica, sans-serif;
+	}
+h1 {
+	font-size: 14px;
+	text-align: center;
+}
+table {
+	border-collapse: collapse; /* 细线表格必须声明的属性 */
+	font-size: 75%;
+	line-height: 28px;
+	margin: 0 auto;
+	}
+tr:hover, td:hover {
+	background: #FF9;
+	}
+th, td {
+	padding: 5px 10px;
+	curcor: pointer;
+	}
+td {
+	text-align: center;
+	}
+th {
+	font-weight: normal;
+	text-align: left;
+	padding-left: 15px;
+	}
+td:only-of-type {
+	background: #eee url(../../../Documents/%E5%9B%BE%E7%89%87%E7%AD%89%E8%B5%84%E6%BA%90/Resources/user/user_total.png)  no-repeat 15px 50%;
+	padding-left: 1px;
+	font-weight: bold;
+	color: #444;
+	}
+thread th {
+	background: #CB4345;
+	border-color: #fff #fff #888 #fff;
+	border-style: solid;
+	border-width: 1px 1px 2px 1px;
+	padding-left: 30px;
+	}
+	
+	/* 使用否定伪类选择器选择主体区域中的非最后一个th元素*/
+tbody th:not(.end) {
+	background: url(../../../Documents/%E5%9B%BE%E7%89%87%E7%AD%89%E8%B5%84%E6%BA%90/Resources/user/user_browse.png) 15px 56% no-repeat;
+	padding-left: 24px;
+	}
+	
+	/* 使用类选择器选择主体区域中的th元素*/
+tbody th.end {
+	background: url(../../../Documents/%E5%9B%BE%E7%89%87%E7%AD%89%E8%B5%84%E6%BA%90/Resources/user/user_download.png) 15px 56% no-repeat;
+	padding-left: 24px;
+	}
+</style>
+</head>
+
+<body>
+<h1>设计层序化的数据表格</h1>
+<table summary="数据表格信息"> 
+	<thread>
+    	<tr>
+        	<th>排名</th>
+            <th>校名</th>
+            <th>总得分</th>
+            <th>人才培养总得分</th>
+            <th>研究生培养得分</th>
+            <th>本科生培养得分</th>
+            <th>科学研究总得分</th>
+            <th>自然科学研究得分</th>
+            <th>社会科学研究得分</th>
+            <th>所属省份</th>
+            <th>分省排名</th>
+            <th>学校排名</th>
+        </tr>
+    </thread>
+    <tbody>
+    	<tr>
+        	<td colspan="12">一类</td>
+        </tr>
+    	<tr>
+        	<th>1</th>           
+            <td>清华大学</td>
+            <td>122</td>
+            <td>221</td>
+            <td>133</td>
+            <td>144</td>
+            <td>133</td>
+            <td>441</td>
+            <td>133</td>
+            <td>京</td>
+            <td>1 </td>
+            <td>理工</td>
+        </tr>
+        <tr>
+        	<th class="end">2</th>           
+            <td>清华大学</td>
+            <td>122</td>
+            <td>221</td>
+            <td>133</td>
+            <td>144</td>
+            <td>133</td>
+            <td>441</td>
+            <td>133</td>
+            <td>京</td>
+            <td>1 </td>
+            <td>理工</td>
+        </tr>
+        <tr>
+        	<td colspan="12">二类</td>
+        </tr>
+         <tr>
+            <th>3</th>
+            <td>清华大学</td>
+            <td>122</td>
+            <td>221</td>
+            <td>133</td>
+            <td>144</td>
+            <td>133</td>
+            <td>441</td>
+            <td>133</td>
+            <td>京</td>
+            <td>1 </td>
+            <td>理工</td>
+         </tr>
+          <tr>
+            <th>4</th>
+            <td>清华大学</td>
+            <td>122</td>
+            <td>221</td>
+            <td>133</td>
+            <td>144</td>
+            <td>133</td>
+            <td>441</td>
+            <td>133</td>
+            <td>京</td>
+            <td>1 </td>
+            <td>理工</td>
+          </tr>
+          <tr>
+            <th>5</th>
+            <td>清华大学</td>
+            <td>122</td>
+            <td>221</td>
+            <td>133</td>
+            <td>144</td>
+            <td>133</td>
+            <td>441</td>
+            <td>133</td>
+            <td>京</td>
+            <td>1 </td>
+            <td>理工</td>
+          </tr>
+          <tr>
+            <th>6</th>
+            <td>清华大学</td>
+            <td>122</td>
+            <td>221</td>
+            <td>133</td>
+            <td>144</td>
+            <td>133</td>
+            <td>441</td>
+            <td>133</td>
+            <td>京</td>
+            <td>1 </td>
+            <td>理工</td>
+          </tr>
+    </tbody>
+</table>
+</body>
+</html>
