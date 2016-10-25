@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>图片墙</title>
+<style>
+body {
+	background: #fff url(../../../Documents/images/%E6%B0%B4%E5%8D%B0%E8%83%8C%E6%99%AF/17.jpg);
+	}
+ul.polaroids li {
+	display: inline;   /* 把li元素修改为inline，制作成水平菜单 */
+	}
+ul.polaroids a {
+	background: #fff;
+	display: inline;
+	float: left;
+	margin: 35px 10px 27px 10px;
+	width: auto;
+	padding: 10px 12px 15px;
+	text-align: center;
+	font-family: "Marker Felt", san-serif;
+	text-decoration: none;
+	color: #333;
+	font-size: 18px;
+	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.25); /*为图片外框设计阴影效果 */
+	-moz-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+	-webkit-transition: -webkit-transform 0.15s linear;
+	-webkit-transform: rotate(-2deg);  /* 顺时针旋转2度 */
+	-moz-transform: rotate(-2deg);	
+	}
+ul.polaroids img {
+	display: block;
+	height: 100px;
+	margin-bottom: 12px;
+	}
+ul.polaroids a:after {
+	content: attr(title); /* 获取a元素的title属性值，并把它作为内容插入到a元素后面*/
+	}
+ul.polaroids li:nth-child(even) a {
+	-webkit-transform: rotate(5deg);  /*逆时针旋转5度*/
+	-moz-transform: rotate(5deg);
+	}
+ul.polaroids li:nth-child(3n) a {
+	position: relative;
+	top: -5px;
+	-webkit-transform: none;
+	-moz-transform: none;
+	}
+ul.polaroids li:nth-child(5n) a {
+	position: relative;
+	right: 5px;
+	-webkit-transform: rotate(-10deg);
+	-moz-transform: rotate(-10deg);
+	}
+ul.polaroids li:nth-child(8n) a {
+	position: relative;
+	right: 5px;
+	top: 8px;
+	}
+ul.polaroids li:nth-child(11n) a {
+	position: relative;
+	left: -5px;
+	top: 3px;
+	}
+ul.polaroids li a:hover {
+	-webkit-transform: scale(1.8);   /* 放大对象1.8倍 */
+	-moz-transform: scale(1.8);
+	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+	position: relative;
+	z-index: 5;
+	}
+
+</style>
+</head>
+
+<body>
+<ul class="polaroids">
+    <li><a href="1" title="图1"> <img src="images/6.png" alt="图1" /></a></li>
+    <li><a href="2" title="图2"> <img src="images/6.png" alt="图2" /></a></li>
+    <li><a href="3" title="图3"> <img src="images/6.png" alt="图3" /></a></li>
+	<li><a href="4" title="图4"> <img src="images/6.png" alt="图4" /></a></li>
+    <li><a href="5" title="图5"> <img src="images/6.png" alt="图5" /></a></li>
+    <li><a href="6" title="图6"> <img src="images/6.png" alt="图6" /></a></li>
+    <li><a href="7" title="图7"> <img src="images/6.png" alt="图7" /></a></li>
+    <li><a href="8" title="图8"> <img src="images/6.png" alt="图8" /></a></li>
+    <li><a href="9" title="图9"> <img src="images/6.png" alt="图9" /></a></li>
+    <li><a href="10" title="图10"> <img src="images/6.png" alt="图10" /></a></li>
+    <li><a href="11" title="图11"> <img src="images/6.png" alt="图11" /></a></li>
+</ul>
+</body>
+</html>
