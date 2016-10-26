@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>手风琴式折叠面板</title>
+<style>
+.accordion {
+	background: #eee;
+	border: 1px solid #ccc;
+	margin: 2em;
+	}
+.accordion h2 {
+	margin : 0;
+	padding: 12px 0;
+	background: #ccc;
+	}
+.accordion .section {
+	border-bottom: 1px solid #ccc;
+	background: #fff;
+	}
+.accordion h3 {
+	margin: 0;
+	padding: 0;
+	background: #eee;
+	padding: 3px 1em;
+	}
+.accordion h3 a {
+	font-weight: normal;
+	text-decoration: none;
+	}
+.accordion :target h3 a {
+	font-weight: bold;
+	}
+.accordion h3 + div {
+	height: 0;
+	padding: 0 1em;
+	overflow: hidden;
+	-webkit-transition: height 0.3s ease-in;
+	-moz-transition: height 0.3s ease-in;
+	-o-transition: height 0.3s ease-in;
+	}
+.accordion h3 + div img {
+	margin: 4px;
+	}
+.accordion :target h3 + div {
+	height: 200px;
+	overflow: auto;
+	}
+</style>
+</head>
+
+<body>
+<div class="accordion">
+	<h2>CSS3手风琴式折叠面板</h2>
+	<div id="one" class="section">
+    	<h3> <a href="#one">折叠栏1</a></h3>
+        <div><img src="images/tu1.png" /></div>
+    </div>
+    <div id="two" class="section">
+    	<h3> <a href="#two">折叠栏2</a></h3>
+        <div><img src="images/tu2.png" /></div>
+    </div>
+    <div id="three" class="section">
+    	<h3> <a href="#three">折叠栏3</a></h3>
+        <div><img src="images/tu3.png" /></div>
+    </div>
+    <div id="four" class="section">
+    	<h3> <a href="#four">折叠栏4</a></h3>
+        <div><img src="images/tu1.png" /></div>
+    </div>
+    <div id="five" class="section">
+    	<h3> <a href="#five">折叠栏5</a></h3>
+        <div><img src="images/tu2.png" /></div>
+    </div>
+    <div id="six" class="section">
+    	<h3> <a href="#six">折叠栏6</a></h3>
+        <div><img src="images/tu3.png" /></div>
+    </div>
+</div>
+</body>
+</html>
