@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS 3变形综合应用</title>
+<style type="text/css">
+body {
+	background: #fff url(../../../../Documents/images/3.png);
+	}
+ul.polaroids li {
+	display: inline;
+	}
+ul.polaroids a {
+	background: #fff;
+	float: left;
+	margin: 0 0 27px 10px;
+	width: auto;
+	padding: 5px 10px 10px;
+	text-align: center;
+	text-decoration: none;
+	color: #333;
+	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+	}
+ul.polaroids img {
+	display: block;
+	text-align: center;
+	width: 200px;
+	margin-bottom: 12px;
+	}
+ul.polaroids a:after {
+	content: attr(title);
+	}
+ul.polaroids li:nth-child(1) a {
+	-moz-transform-origin: 0 0;
+	-webkit-transform-origin: 0 0;
+	-o-transform-origin: 0 0;
+	
+	-moz-transform: rotate(20deg);
+	-webkit-transform: rotate(20deg);
+	-o-transform: rotate(20deg);
+	}
+ul.polaroids li:nth-child(2) a {
+	-moz-transform-origin: top right;
+	-webkit-transform-origin: top right;
+	-o-transform-origin: top right;
+	
+	-moz-transform: rotate(-30deg);
+	-webkit-transform: rotate(-30deg);
+	-o-transform: rotate(-30deg);
+	}
+ul.polaroids li:nth-child(3) a {
+	-moz-transform-origin: 0 100%;
+	-webkit-transform-origin: 0 100%;
+	-o-transform-origin: 0 100%;
+	
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	}
+ul.polaroids li:nth-child(4) a {
+	-moz-transform-origin: 100% 100%;
+	-webkit-transform-origin: 100% 100%;
+	-o-transform-origin: 100% 100%;
+	
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	}
+	
+ul.polaroids li a:hover {
+	-moz-transform-origin: 0 0;
+	-webkit-transform-origin: 0 0;
+	-o-transform-origin: 0 0;
+	
+	-webkit-transform: scale(1.8);   /* 放大对象1.8倍 */
+	-moz-transform: scale(1.8);
+	
+	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+	position: relative;
+	z-index: 5;
+	}
+</style>
+</head>
+
+<body>
+<ul class="polaroids">
+	<li><a href="1" title="左上角为原点旋转"><img src="images/flower.png" title="左上角为原点，顺时针旋转30度" /></a></li>
+	<li><a href="2" title="右上角为原点旋转"><img src="images/flower.png" title="右上角为原点，逆时针旋转30度" /></a></li>
+	<li><a href="3" title="左下角为原点旋转"><img src="images/flower.png" title="左下角为原点，顺时针旋转60度" /></a></li>
+    <li><a href="4" title="右下角为原点旋转"><img src="images/flower.png" title="右下角为原点，顺时针旋转60度" /></a></li>
+</ul>
+</body>
+</html>
