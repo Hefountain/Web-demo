@@ -1,0 +1,214 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body,figure,figcaption,h2,p,img {
+	margin: 0;
+	padding: 0;
+	}
+figure {
+	position:relative;
+	width:33.33%;
+	overflow: hidden;
+	height: 330px;
+	float:left;
+	}
+figcaption {
+	position: absolute;
+	top: 0;
+	left:0;
+	font-size:12px;
+	font-family:"微软雅黑";
+	}
+figure img {
+	opacity: 0.8;  /*虚化图片*/
+	transition: all 0.35s;
+	}
+figure figcaption p,h2,div {
+	transition: all 0.35s;
+	}
+/*响应式布局——当浏览器尺寸不同时，都能有一个良好的用户体验，此处用到的是“媒体查询”*/
+	@media screen and (max-width:600px) {
+		figure{width: 100%;}  /*小于600px时*/
+		}
+	@media screen and (min-width:601px) and (max-width:1000px) {
+		figure{width:50%;}  
+		}
+	@media screen and (min-width:1001px) {
+		figure{width:33.33%;}
+		}
+/*平移动画 translate() */	
+im1 {
+	background: #2F0000;
+	}	
+.im1 figcaption {
+	padding: 20px;
+	}
+.im1 figcaption p {
+	background: #FFF;
+	color:#333;
+	margin: 5px;
+	text-align:center;
+	transform:translate(-130px,0px);
+	}
+.im1 figcaption p:nth-of-type(1) {
+	transition-delay: 0.05s;
+	}
+.im1 figcaption p:nth-of-type(2) {
+	transition-delay: 0.15s;
+	}
+.im1 figcaption p:nth-of-type(3) {
+	transition-delay: 0.20s;
+	}  /*给各个p标签不同的延迟时间，让p标签依次移动出来*/
+.im1:hover figcaption p {
+	transform:translate(0px,0px);
+	}
+.im1:hover img {
+	transform:translate(-50px,0px);
+	opacity: 0.5;
+	}
+/*旋转动画 rotate() */
+.am {
+	background:#EECA71;
+	}
+.am figcaption {
+	width: 100%;
+	height: 100%;
+	}
+.am figcaption h2 {
+	margin-top:20%;
+	margin-left: 25%;
+	}
+.am figcaption p {
+	margin-left: 25%;
+	transform:translate(0,60px);
+	opacity: 0;
+	}
+.am figcaption div {
+	border: 2px solid #FFF;
+	width: 60%;
+	height: 60%;
+	position: absolute;
+	top: 20%;
+	left: 20%;
+	transform: translate(0,-350px) rotate(0deg);
+	}
+.am:hover figcaption div {
+	transform: translate(0,0) rotate(360deg);
+	}
+.am:hover img {
+	opactiy: 0.5;
+	}
+.am:hover figcaption p {
+	transform:translate(0,0);
+	opacity: 1.0;
+	}
+/*斜切动画演示 skew() */
+.cm {
+	background:#B6EEFB;
+	}
+.cm figcaption {
+	top: 30%;
+	left: 30%;
+	}	
+.cm figcaption h2 {
+	transform: skew(90deg);
+	}
+.cm figcaption p {
+	transform: skew(90deg);
+	transition-delay: 0.1s;
+	}
+.cm:hover figcaption img {
+	opacity: 0.5;
+	}
+.cm:hover figcaption h2 {
+	transform: skew(0deg);
+	}
+.cm:hover figcaption p {
+	transform: skew(0deg);
+	}
+/*缩放动画 scale() */
+.dm {
+	background:#EECA71;
+	}
+.dm figcaption {
+	width: 100%;
+	height:100%;
+    }
+.dm figcaption h2 {
+	margin-top: 15%;
+	margin-left:17%;
+	transform: scale(1.2,1.2);
+	opacity: 0;
+	}
+.dm figcaption p {
+	margin-left:17%;
+	transform: scale(1.2,1.2);
+	opacity: 0;
+	}
+.dm figcaption div {
+	border: 2px solid #FFF;
+	width: 60%;
+	height:60%;
+	position:absolute;
+	top:15%;
+	left:15%;
+	transform: scale(1.2,1.2);
+	opacity: 0;
+	}
+.dm:hover figcaption div {
+	transform: scale(1,1);
+	opacity: 1.0;
+	}
+.dm:hover img {
+	opacity: 0.5;
+	transform: scale(1.2,1.2);
+	}
+.dm:hover figcaption h2 {
+	transform: scale(1,1);
+	opacity: 1.0;
+	}
+.dm:hover figcaption p {
+	transform: scale(1,1);
+	opacity: 1.0;
+	}
+/*旋转动画二*/
+.em {
+	background:#BCDDF3;
+	}
+.em figcaption {
+	width: 100%;
+	height: 100%;
+	}
+.em:hover img {
+	opacity: 0.5;
+	}
+.em figcaption h2 {
+	margin-left: 15%;
+	margin-top: 15%;
+	transform: translate(0,350px);
+	opacity: 0;
+	}
+.em figcaption div {
+	background: white;
+	width: 150%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	left:0;
+	transform: translate(0,329px)  rotate(0deg);
+	transform-origin:0 0;  /*使旋转的原点在左上角*/
+	}
+.em:hover figcaption h2 {
+	transform: translate(0,0);
+	opacity:1.0;
+	}
+.em:hover figcaption div {
+	transform: translate(0,329px) rotate(-15deg);
+	}
+
+
+
+
+
+
+
