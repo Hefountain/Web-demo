@@ -1,0 +1,207 @@
+ 
+    /* 公共样式 */
+    * {
+      margin:0;
+      padding:0;  
+    }
+    a {
+      text-decoration: none;  
+      color: #333;
+    }
+    body {
+      font-family:  "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+      color: #333;
+    }
+    li {
+      list-style: none;
+    }
+    .layout {
+      width: 1000px;
+      margin: 0 auto;    
+    }
+    .clearfix:after {
+      content:'';
+      display: block;
+      clear: both;
+    }
+    .btn {
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      color: white;
+      padding: 5px 8px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    /* 导航 */ 
+    #header .logo{
+      float: left;
+      font-size: 30px;
+      line-height: 50px;
+    }
+    #header .navbar {
+      float: left;
+      margin-left: 20px;
+    }
+    #header .navbar>li {
+      float: left;
+      position: relative;
+      height: 50px;
+      line-height: 50px;
+      padding: 0 10px;
+    }
+    #header .navbar .droplist {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      display: none;
+      border: 1px solid #ccc;
+    }
+    #header .navbar>li:hover .droplist {
+      display: block;
+    }
+    .droplist li {
+      line-height: 1;
+      padding: 10px;
+      border-bottom: 1px dashed #ccc;
+    }
+    .droplist li:last-child {
+      border: none;
+    }
+    .droplist li:hover {
+      background: #eee;
+    }
+     .content {
+      margin: 20px 0;
+    }
+    /* 文字简介 */
+    .intro {
+      background-color: #AA3833;
+      color:#fff;
+      padding: 30px 0;
+      line-height: 2;
+    }
+    
+    /*面包屑导航*/
+    .breadcrumb {
+      background: #EAEAEA;
+      margin-top: 40px;
+      border-radius: 3px;
+    }
+    .breadcrumb ul {
+      padding: 10px;
+    }
+    .breadcrumb ul li{
+      display: inline-block;
+      }
+    .breadcrumb a {
+      color: #b84d45;
+    }
+
+    /* 主要内容  */
+    .main {
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+    .main ul {
+      margin-left: -47px;
+    }
+    .main ul li {
+      width: 300px;
+      float: left;
+      margin-left: 47px;
+      margin-top: 20px; 
+      border: 1px solid #ccc;
+      text-align: center;
+      color: white;
+
+    }
+    .myfigure h1 {
+      font-size: 18px;
+      text-align: center;
+      padding-bottom: 2px;
+    }
+    .myfigure p {
+      font-size: 16px;
+      text-align: center;
+    }
+    .main .btn:hover {
+      background-color: black;
+    }
+    
+    .myfigure img {
+      max-width: 100%;
+      display: block;
+      position: relative;
+    }
+    .myfigure figcaption {
+      background: #AA3833;
+    }
+    
+    .myfigure figure {
+      overflow: hidden;
+    }
+    .myfigure figure img {
+      -webkit-transition: -webkit-transform 0.4s;
+      -moz-transition: -moz-transform 0.4s;
+      transition: transform 0.4s;
+    }
+
+    .myfigure figcaption {
+      height: 100%;
+      width: 100%;
+      top: auto;
+      bottom: 0;
+      opacity: 0;
+      -webkit-transform: translateY(100%);
+      -moz-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+      transform: translateY(100%);
+      -webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+      -moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
+      transition: transform 0.4s, opacity 0.1s 0.3s;
+    }
+
+    .myfigure figure:hover figcaption {
+      opacity: 1;
+      -webkit-transform: translateY(0px);
+      -moz-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+      transform: translateY(0px);
+      -webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+      -moz-transition: -moz-transform 0.4s, opacity 0.1s;
+      transition: transform 0.4s, opacity 0.1s;
+    }
+
+
+    /*关于我*/
+    #about {
+      /*box-sizing: border-box;*/
+      background-color: #AA3833;
+      color: #fff;
+      text-align: center;
+      padding: 28px;
+      line-height: 1.5;
+      margin-bottom: 40px;
+    }
+    #about h2 {
+      font-size: 30px;
+    }
+    #about p {
+      font-size: 15px;
+    }
+    .download {
+      color: #fff;
+    }
+    /*底部*/
+    #footer p {
+      margin: 30px 0;
+      padding-top: 30px;
+      border-top: 1px solid #ccc;
+      text-align: center;
+}
+
+

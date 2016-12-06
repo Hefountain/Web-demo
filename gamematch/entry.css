@@ -1,0 +1,269 @@
+@charset "UTF-8";
+/* CSS Document */
+
+h3 {
+	color: black;
+	margin-bottom: 25px;
+}
+h5 {
+	font-size: 14px;
+}
+p {
+	color: #535353;
+	font-size: 14px;
+}
+span {
+	color: black;
+	font-size: 14px;
+	font-weight: bold;
+}
+/* entry.html  */
+.audio, .entry, .schedual, .guideline, .award, .review, .match_rule {
+	width: 965px;
+	margin:  0 auto;
+}
+/*视频示例*/
+.clearfix {
+	zoom: 1;
+}
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.audio {
+	margin-top: 26px;
+	margin-bottom: 40px;
+	position: relative;
+}
+.audio h3 {
+	font-size: 22px;
+}
+.audio span {
+	position: absolute;
+	top: 5px;
+	left: 110px;
+	color: gray;
+	font-size: 14px;
+}
+.audio_example {
+	margin-top: 20px;
+	background: url(entries-image/enteries_1.png) no-repeat;
+	height: 340px;
+}
+.audio_example p {
+	font-size: 14px;
+	color: gray;
+	line-height: 20px;
+	padding-top: 15px;
+}
+.audio_left, .audio_right {
+	width: 45%;
+	padding-top: 16px;
+	position: relative;
+}
+.play_1, .play_2 {
+	position: absolute;
+	top: 93px;	
+}
+.play_1 {
+	left: 195px;
+}
+.play_2 {
+	right: 200px;
+}
+.audio_left {
+	float: left;
+	padding-left: 18px;
+}
+.audio_right {
+	float: right;
+	padding-right: 22px;
+}
+/*参赛作品*/
+.entry {
+	overflow: hidden;
+}
+.entry h3 {
+	padding-bottom: 30px;
+}
+.entry ul li {
+	list-style: none;
+	float: left;
+	width: 200px;
+	height: 250px;
+	text-align: left;
+	position: relative;
+	margin-bottom: 40px;
+}
+.entry ul li img:nth-of-type(1) {
+	display: block;
+	width: 200px;
+	height: 250px;
+}
+.entry ul li.aa {
+	margin-left: 51px;
+}
+.entry ul a.icon {
+	position: absolute;
+	top: 18px;
+	left: 25px;
+	color: black;
+	font-weight: bold;
+	font-size: 16px;
+	text-decoration: none;
+}  
+.entry a.icon img:nth-of-type(1) {
+	width: 150px;
+	height: 150px;
+}
+.content {
+	position: absolute;
+	bottom: 0;
+	height: 70px;
+	width: 100%;
+}
+.content p {
+	padding-left: 25px;
+	font-weight: bold;
+	font-size: 16px;
+}
+.star {
+	position: relative;
+	height: 20px;
+}
+.star p.pp img:nth-of-type(1) {
+	width: 20px;
+	height: 20px;
+	display: inline;
+	position: absolute;
+	top: 3px;
+	left: 22px;
+}
+.star span {
+	font-size: 15px;
+	font-weight: normal;
+	position: absolute;
+	top: 0px;
+	left: 42px;
+}
+.content a.vote {
+	position: absolute;
+	bottom: 0px;
+	right: 0;
+}
+.content a.vote img:nth-of-type(1) {
+	width: 76px;
+	height: 40px;
+}
+/*投票规则*/
+.rule {
+	width: 100%;
+	background-color: #ECECEC; 
+}
+.rule .introduce {
+	height: 240px;
+}
+.rule .introduce h4 {
+	color: #262626;
+	padding-top: 30px;
+	padding-bottom: 5px;
+}
+.rule .cont {
+	font-size: 14px;
+	height: 80px;
+	line-height: 30px;
+}
+
+
+/* rule.html  */
+
+/* 大赛时间安排*/
+.schedual, .guideline, .award, .review {
+	margin-bottom: 20px;
+	border-bottom: 1px solid #CCC;
+}
+.schedual img {
+	margin-bottom: 25px;
+	margin-top: 25px;
+}
+.schedual h3 {
+	margin: 25px 0 0 0;
+}
+/* 大赛指引*/
+.guideline ul li {
+	list-style: none;
+}
+.guideline ul li .demo03 {
+	position: relative;
+	margin-top: 30px;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.demo03 img {
+	float: left;
+	margin: -20px 0px 0 0 -87px;
+	padding-right: 30px;
+}
+/* 奖项说明*/
+.award {
+	margin-bottom: 30px;
+	overflow: hidden;
+}
+.award_desc {
+	position: relative;
+}
+.award_desc p {
+	position: absolute;
+	top: 3px;
+	left: 100px;
+}
+.a_prize {
+	margin-bottom: 25px;
+	line-height: 30px;
+}
+p.b_prize {
+	padding-bottom: 25px;
+}
+/* 评审规则*/
+.re {
+	display: block;
+	overflow: hidden;
+	zoom: 1;
+	width: 360px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.review p.p_review {
+	margin-bottom: 12px;
+}
+.a_view ul li {
+	padding-bottom: 10px;
+}
+.a_review {
+	float:  left;
+}
+.b_review {
+	float: right;
+}
+/* 参赛规则*/
+
+.m_rule {
+	margin-bottom: 30px;
+}
+.mat_rule {
+	margin-bottom: 20px;
+	line-height: 30px;
+}
+.mat_rule p {
+	text-indent: 1em;
+}
+.special {
+	margin-top: 30px;
+	margin-bottom: 16px;
+}
+.special p {
+	color: red;
+	line-height: 30px;
+}
+

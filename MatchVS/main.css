@@ -1,0 +1,365 @@
+@charset "UTF-8";
+/* CSS Document */
+* {
+	margin: 0;
+	padding: 0;
+	}
+body {
+	width: 100%;
+	height: 100%;
+}
+/*导航 */
+#navi {
+	height: 60px;
+	border-bottom: 1px solid #ccc;
+	background-color: #fff;
+}
+nav, .icon, .feature, .zhanlve, .foot, .select, .new{
+	width: 1000px;
+	margin: 0 auto;
+}
+.logo, .menu {
+	float: left;
+}
+#bigMenu {
+	float: right;
+}
+.login span {
+	line-height: 60px;
+	float: right;
+}
+.login span a {
+	height: 60px;
+	text-decoration: none;
+	font-family: "微软雅黑";
+	color: black;
+}
+nav ul {
+	margin: 0 30px;
+	padding: 0;
+	height: 60px;
+	}
+.menu ul li {
+	list-style: none;
+	float: left;
+	width: 100px;
+	height: 58px;
+	line-height: 58px;
+	text-align: center;
+	}
+.menu ul li a{
+	text-decoration: none;
+	color: black;
+	font-size: 17px;
+	font-family: "微软雅黑";
+}
+.menu ul li a:hover {
+	font-weight: bold;
+	color: #1CA3A8;
+}
+.menu li:hover {
+	border-bottom: 2px solid #1CA3A8;
+}
+/*轮播图 */
+.w-slider {
+	margin:0 auto;
+	clear: both;
+}
+#slider{
+	height: 380px;		
+	position: relative;			
+	overflow: hidden;
+}
+#wrap {
+	width: 1920px;
+	height: 100%;
+	margin: 0 auto;
+	}
+#buttons {
+	position: absolute;
+    height:80px;
+    width:100px;
+	left:50%;
+	margin-left:-30px;
+	bottom: -40px;
+	z-index: 2;
+}
+#buttons span {
+	cursor: pointer;
+	float: left;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background-color:#fff;
+	margin: 5px; 
+	}
+
+#buttons .on {
+	background: #1CA3A8;
+}
+
+/*图标展示*/
+.icon {
+	background-image: url(images/tu_16.png);
+	background-repeat: no-repeat;
+	background-position: center 100%;
+	height: 124px;
+}
+.icon ul li {
+		display: inline;
+		list-style: none;
+		margin-left: 30px;
+		padding: 0 10px;
+}
+
+/*特性展示*/
+.showTitle {
+	margin-top: 35px;
+}
+.showTitle h3, .showTitle p{
+	text-align: center;
+	font-family: "微软雅黑";
+}
+.showTitle h3 {
+	font-size: 36px;
+	margin-bottom: 20px;
+}
+.show {
+	margin-top: 20px;
+}
+.show ul li {
+	list-style: none;
+	float: left;
+	width: 332px;
+	height: 322px;
+	padding-top: 20px;
+	text-align: center;
+}
+.show #t1 {
+	padding-top: 17px;
+	padding-bottom: 20px;
+	font-size: 20px;
+	font-weight: bold;
+}
+.show #t2 {
+	width: 280px;
+	font-size: 14px;
+	color: black;
+	padding-left: 22px;
+	text-align: left;
+}
+.freeJoin {
+	padding: 40px 0;
+	text-align: center;
+}
+/*新闻展示*/
+.newWrap {
+	width: 100%;
+	background-color: #EFEFEF;
+}
+.new {
+	height: 285px;
+}
+.newList {
+	width: 33%;
+	float: left;
+	position: relative;
+}
+.newList h2, .newActivity h2 {
+	margin-top: 20px;
+	font-size: 22px;
+}
+.newList ul {
+	padding-top: 30px;
+}
+.newList ul li {
+	list-style: none;
+	padding-bottom: 15px;
+	width: 320px;
+	overflow: hidden;       /* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow: ellipsis;   /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+	white-space: nowrap;   /* 不换行 */
+}
+.newList a, .newActivity a {
+	color: black;
+}
+.newList span a, .newActivity span a {
+	color: Gray;
+}
+.newList span, .newActivity span {
+	position: absolute;
+	top: 25px;
+	right: 30px;
+}
+.newActivity {
+	width: 67%;
+	float: right;
+	left: 30px;
+	position: relative;
+}
+.event1, .event2 {
+	float: left;
+	position: absolute;
+	margin-top: 30px;
+	height: 130px;
+	width: 300px;
+}
+.event1 img, .event2 img {
+	height: 130px;
+	width: 300px;
+}
+.event1 p, .event2 p {
+	height: 25px;
+	line-height: 20px;
+	padding-top: 5px;
+	font-weight: bold;
+}
+.event2 {
+	right: 45px;
+}
+/*合作伙伴*/
+.partner {
+	width: 1100px;
+	margin: 0 auto;
+	height: 630px;
+}
+.title h2 {
+	text-align: center;
+	font-size: 38px;
+	color: black;
+	font-weight: bold;
+	padding-top: 40px;
+	padding-bottom: 15px;
+}
+.title p {
+	font-size: 18px;
+	text-align: center;
+	width: 760px;
+	margin:  0 auto;
+	line-height: 30px;
+	padding-bottom: 30px;
+}
+.lrshow {
+	position: relative;
+	padding-top: 20px;
+}
+.left, .right {
+	position: absolute;
+	background: url(images/tu_20.png) no-repeat ;
+	width: 600px;
+	height: 360px;
+}
+.left {
+	float: left;
+	padding-top: 25px;
+	padding-left: 118px;
+}
+.right {
+	float: right;
+	padding-top: 23px;
+	right: -10px;
+}
+.right ul, .right p, .imgg {
+	padding-left: 105px;
+}
+.left p, .right p {
+	width: 380px;
+	font-size: 14px;
+	line-height: 25px;
+	padding-top: 20px;
+	padding-bottom: 21px;
+}
+.left ul li, .right ul li {
+	list-style: none;
+	padding-bottom: 10px;
+}
+.left span, .right span{
+	text-decoration: underline;
+	font-size: 14px;
+}
+.left li img{
+	padding-right: 20px;
+}
+.right span {
+	margin-left: 20px;
+}
+.right ul li:nth-of-type(3) span, .right ul li:nth-of-type(4) span {
+	margin-left: 0;
+} 
+.right ul li:nth-of-type(1) span {
+	margin-left: 15px;
+}
+/*战略选择*/
+.selection {
+	width: 100%;
+	background-color: #EFEFEF;
+}
+.select {
+	height: 380px;
+}
+.select h3 {
+	font-size: 22px;
+	color: black;
+	padding-top: 40px;
+	padding-bottom: 35px;
+}
+.select ul li {
+	list-style: none;
+	float: left;
+}	
+.select ul li:nth-of-type(2), .select ul li:nth-of-type(3){
+	margin-left:  40px;
+}
+.select ul li p:nth-of-type(1){
+	font-size: 18px;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-bottom: 8px;
+}
+.select ul li p:nth-of-type(2){
+	font-size: 14px;
+}
+/*战略合作*/
+.coopera {
+	width: 100%;
+	background: #2E2E34;
+}
+.zhanlve {
+	height: 300px;
+}
+.zhanlve h3 {
+	font-size: 22px;
+	color: white;
+	padding-top: 35px;
+	padding-bottom: 20px;
+}
+.zhanlve ul li {
+	display: inline;
+	list-style: none;
+	padding-right: 35px;
+}
+.zhanlve ul li img {
+	padding: 9px 0;
+}
+/*底部*/
+.footer {
+	width: 100%;
+	background-color: #39393E;
+}
+.foot {
+	height: 105px;
+	text-align: center;
+}
+.content {
+	padding-top: 28px;
+	padding-bottom: 16px;
+}
+.content, a{
+	color: white;
+	font-size: 14px;
+	text-decoration: none;
+}
+.copyright {
+	font-size: 14px;
+	color: DarkGray;
+}
