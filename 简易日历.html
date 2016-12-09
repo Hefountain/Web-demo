@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		h3 {
+			margin-left: 226px;
+		}
+			.text {
+				clear: both;
+				margin-left: 50px;
+				background: #FFFFFF;
+				width: 385px;
+				height: 150px;
+				border: 1px solid black;
+			}
+			.active {
+				border: 1px solid red;
+				background: white;
+				color: black;
+			}
+			ul {
+				list-style: none;
+				width: 500px;
+				
+			}
+			
+			li {
+				cursor: pointer;
+				float: left;
+				margin: 10px;
+				width: 80px;
+				height: 80px;
+				border: 1px solid blue;
+				background: black;
+				color: white;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var oDiv = document.getElementById('tab');
+				var oli = oDiv.getElementsByTagName('li');
+				var oTxt = oDiv.getElementsByTagName('div')[0];
+				// 定义数组，存储月份内容
+				var arr = [
+					'这月制作个日历',//1月的活动
+                		'很开心',//2月的活动
+                		'很开心',//3月的活动
+                		'很难过',//4月的活动
+                		'很开心',//5月的活动
+                		'值得纪念',//6月的活动
+                		'心情一般',//7月的活动
+                		'很充实',//8月的活动
+                		'扶老奶奶过了马路',//9月的活动
+                		'玩的很好很愉快',//10月的活动
+                		'伤心不需要理由',//11月的活动
+                		'崩溃了'//12月的活动
+				]; 
+				for (var i = 0; i < oli.length; i++) {
+					oli[i].index = i; // 自定义属性，使其值 = i
+					oli[i].onmouseover = function(){
+						for (var i = 0; i < oli.length; i ++) {
+							oli[i].className = '';
+						}	
+						this.className = 'active';
+						oTxt.innerHTML = "第" + (this.index + 1) + "月内容";
+						oTxt.innerHTML += "<br />" + arr[this.index];
+					}
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<div id="tab" class="calendar">
+			<h3>日历</h3>
+			<ul>
+				<li class="active">
+					<h2><span>1月</span></h2>
+				</li>
+				<li>
+					<h2><span>2月</span></h2>
+				</li>
+				<li>
+					<h2><span>3月</span></h2>
+				</li>
+				<li>
+					<h2><span>4月</span></h2>
+				</li>
+				<li>
+					<h2><span>5月</span></h2>
+				</li>
+				<li>
+					<h2><span>6月</span></h2>
+				</li>
+				<li>
+					<h2><span>7月</span></h2>
+				</li>
+				<li>
+					<h2><span>8月</span></h2>
+				</li>
+				<li>
+					<h2><span>9月</span></h2>
+				</li>
+				<li>
+					<h2><span>10月</span></h2>
+				</li>
+				<li>
+					<h2><span>11月</span></h2>
+				</li>
+				<li>
+					<h2><span>12月</span></h2>
+				</li>
+			</ul>
+			<div class="text">1月的内容<br>这月制作个日历</div>
+		</div>
+	</body>
+</html>
