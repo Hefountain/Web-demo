@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>图片浏览器</title>
+    <script src="move.js"></script>
+    <link href="Picture.css" rel="stylesheet" />
+    <script>
+        function getByClass(oParent, sClass) {
+            var aEle = oParent.getElementsByTagName('*');
+            var aResult = [];
+            for (var i = 0; i < aEle.length; i++) {
+                if (aEle[i].className == sClass) {
+                    aResult.push(aEle[i]);
+                }
+            }
+            return aResult;
+        }
+        window.onload = function () {
+            var oDiv = document.getElementById('playimages');//总div
+            var oBtnPrev = getByClass(oDiv, 'prev')[0];//上一张
+            var oBtnNext = getByClass(oDiv, 'next')[0];//下一张
+            var oMarkLeft = getByClass(oDiv, 'mark_left')[0];//上一张布局
+            var oMarkRight = getByClass(oDiv, 'mark_right')[0];//下一张布局
+
+            var oDivSmall = getByClass(oDiv, 'small_pic')[0];//小图片Div
+            var oUlSmall = oDivSmall.getElementsByTagName('ul')[0];//小图片 div ul
+            var aLiSmall = oDivSmall.getElementsByTagName('li');//小图片 idv ul li
+            var oUlBig = getByClass(oDiv, 'big_pic')[0];//大图片 ul
+            var aLiBig = oUlBig.getElementsByTagName('li');//大图片 ul li
+            var aLengBig = getByClass(oUlBig, 'length')[0];//计算图片数量
+            var aTxtBig = getByClass(oUlBig, 'text')[0];//图片文字说明
+            var nowZIndex = 2;//当前图片的ZIndex
+            var now = 0;//当前图片的索引
+
+            aLengBig.innerHTML = (now + 1) + "/" + aLiSmall.length;//计算图片数量
+            var Says = ["数字1", "数字2", "数字3", "数字4", "数字5"];
+
+            aLengBig.innerHTML = (now + 1) + "/" + aLiSmall.length;
+            for (var i = 0; i < Says.length; i++) {
+                if (i == now) {
+                    aTxtBig.innerHTML = Says[i];
+                }
+            }
+            oUlSmall.style.width = aLiSmall.length * aLiSmall[0].offsetWidth + 'px';
+
+            //上一张图片按钮、布局移入移出(淡入淡出)事件：
+            oBtnPrev.onmouseover = oMarkLeft.onmouseover = function () {
+                startMove(oBtnPrev, 'opacity', 100, 5);
+            };
+            oBtnPrev.onmouseout = oMarkLeft.onmouseout = function () {
+                startMove(oBtnPrev, 'opacity', 0, 5);
+            };
+
+            //下一张图片按钮、布局移入移出(淡入淡出)事件：
+            oBtnNext.onmouseover = oMarkRight.onmouseover = function () {
+                startMove(oBtnNext, 'opacity', 100, 5);
+            };
+            oBtnNext.onmouseout = oMarkRight.onmouseout = function () {
+                startMove(oBtnNext, 'opacity', 0, 5);
+            };
+            document.onkeydown = function (ev) {
+                var oEvent = ev || event;
+                if (oEvent.keyCode==37)
+                {
+                    alert("sf");
+                }
+            }
+            for (var i = 0; i < aLiSmall.length; i++) {
+                aLiSmall[i].index = i;//添加一个自定义属性index，index的值为i
+                aLiSmall[i].onclick = function () {
+                    if (this.index == now) return;//如果当前的index==当前图片索引，则不往下执行
+                    now = this.index;//当前索引==当前index
+                    tab();//调用封装的tab
+                }
+                //小图片鼠标移入移出事件
+                aLiSmall[i].onmouseover = function () {
+                    startMove(this, "opacity", 100, 5);
+                }
+                aLiSmall[i].onmouseout = function () {
+                    if (this.index != now) {
+                        startMove(this, "opacity", 60, 5);
+                    }
+                }
+
+                //图片移动封装
+                function tab() {
+                    aLiBig[now].style.zIndex = nowZIndex++;//大图片ul li自定义的index的zIndex为当前图片zIndex自增量
+                    //图片透明度渐低
+                    for (var i = 0; i < aLiSmall.length; i++) {
+                        startMove(aLiSmall[i], "opacity", 60, 5);
+                    }
+
+                    //图片透明度增加
+                    startMove(aLiSmall[now], 'opacity', 100, 5);
+
+                    //将高度默认为0
+                    aLiBig[now].style.height = 0;
+
+                    //高度变速增加
+                    startMove(aLiBig[now], "height", 320, 5);
+                    if (now == 0) {//如果当前索引为0，则ul 的left为0
+                        startMove(oUlSmall, 'left', 0, 5);
+                    }
+                    else if (now == aLiSmall.length - 1) {//如果当前索引为最后一张图片，则width为当前-（索引-2）*第一个li的宽度
+                        startMove(oUlSmall, 'left', -(now - 2) * aLiSmall[0].offsetWidth);
+                    }
+                    else {//(当前索引-1)*第一个li的宽度
+                        startMove(oUlSmall, 'left', -(now - 1) * aLiSmall[0].offsetWidth, 5, 5);
+                    }
+
+                    aLengBig.innerHTML = (now + 1) + "/" + aLiSmall.length;
+                    for (var i = 0; i < Says.length; i++) {
+                        if (i == now) {
+                            aTxtBig.innerHTML = Says[i];
+                        }
+                    }
+                };
+                //点击上一张，下一张按钮事件
+                oMarkLeft.onclick = oBtnPrev.onclick = function () {
+                    now--;//自减
+                    if (now == -1) {//如果当前索引为第0张图片(没有图片）
+                        now = aLiSmall.length - 1;//当前索引=图片的li长度-1,也就是调至最后一张图片
+                    }
+                    tab();
+                };
+                oMarkRight.onclick = oBtnNext.onclick = function () {
+                    now++;//自增
+                    if (now == aLiSmall.length) {//如果当前索引=li的长度，也就是最后一张
+                        now = 0;//索引为0，跳至第一张
+                    }
+                    tab();
+                };
+            };
+
+            var time = setInterval(oBtnNext.onclick, 5000);
+            oDiv.onmouseover = function () {//鼠标移到图片浏览器上，停止图片自动浏览
+                clearInterval(time);
+            };
+            oDiv.onmouseout = function () {//鼠标移出，继续自动浏览图片
+                time = setInterval(oBtnNext.onclick, 5000);
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="playimages" class="play">
+        <ul class="big_pic">
+            <div class="prev"></div>
+            <!--上一张的按钮-->
+            <div class="next"></div>
+            <!--下一张的按钮-->
+            <div class="text">加载图片说明……</div>
+            <div class="length">计算图片数量……</div>
+            <a class="mark_left" href="javascript:;"></a>
+            <!--上一张按钮布局-->
+            <a class="mark_right" href="javascript:;"></a>
+            <!--下一张按钮布局-->
+            <div class="bg"></div>
+            <!--加载图片说明，计算图片数量布局-->
+
+            <li style="z-index: 1;">
+                <img src="http://pic33.nipic.com/20130916/3420027_192919547000_2.jpg" />
+            </li>
+            <li>
+                <img src="http://4493bz.1985t.com/uploads/allimg/150127/4-15012G52133.jpg" /></li>
+            <li>
+                <img src="http://img05.tooopen.com/images/20140604/sy_62331342149.jpg" /></li>
+            <li>
+                <img src="http://pic6.huitu.com/res/20130116/84481_20130116142820494200_1.jpg" /></li>
+            <li>
+                <img src="http://pic33.nipic.com/20130916/3420027_192919547000_2.jpg" /></li>
+        </ul>
+        <div class="small_pic">
+            <ul style="width: 400px;">
+                <li style="filter: 100; opacity: 1;">
+                    <img src="http://pic33.nipic.com/20130916/3420027_192919547000_2.jpg" />
+                </li>
+                <li>
+                    <img src="http://4493bz.1985t.com/uploads/allimg/150127/4-15012G52133.jpg" />
+                </li>
+                <li>
+                    <img src="http://img05.tooopen.com/images/20140604/sy_62331342149.jpg" />
+                </li>
+                <li>
+                    <img src="http://pic6.huitu.com/res/20130116/84481_20130116142820494200_1.jpg" />
+                </li>
+                <li>
+                    <img src="http://pic33.nipic.com/20130916/3420027_192919547000_2.jpg" />
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

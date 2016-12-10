@@ -1,0 +1,156 @@
+﻿body {
+    background: #666;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.play { /*图片浏览器的父级div*/
+    width: 400px;
+    height: 440px;
+    margin: 50px auto 0;
+    background: #999;
+    font: 12px Arial;
+}
+
+.big_pic { /*父级div下的父级ul*/
+    width: 400px;
+    height: 320px;
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    background: #222;
+    position: relative;
+}
+
+    .big_pic li { /*父级ul下的li*/
+        width: 400px;
+        height: 320px;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        /*background: url("load.gif") no-repeat center center;*/
+    }
+
+img { /*全部图片的样式*/
+    width: 400px;
+    height: 295px;
+}
+
+.mark_left { /*左边按钮的布局 a标签*/
+    width: 59px;
+    height: 320px;
+    position: absolute;
+    left: 1px;
+    top: 0;
+    background: #2f2f2f;
+    filter: alpha(opacity:0);
+    opacity: 0;
+    z-index: 3000;
+}
+
+.mark_right { /*右边按钮的布局  a标签*/
+    width: 60px;
+    height: 320px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #e5e5e5;
+    filter: alpha(opacity:0);
+    opacity: 0;
+    z-index: 3000;
+}
+
+.big_pic .prev { /*浏览上一张按钮*/
+    width: 60px;
+    height: 60px;
+    background: url("prev.png") no-repeat;
+    position: absolute;
+    top: 130px;
+    left: 10px;
+    z-index: 3001;
+    filter: alpha(opacity:0);
+    opacity: 0;
+    cursor: pointer;
+}
+
+.big_pic .next { /*浏览下一张按钮*/
+    width: 60px;
+    height: 60px;
+    background: url("next.png") no-repeat;
+    position: absolute;
+    top: 130px;
+    right: 10px;
+    z-index: 3001;
+    filter: alpha(opacity:0);
+    opacity: 0;
+    cursor: pointer;
+}
+
+.big_pic .text { /*图片文字说明*/
+    position: absolute;
+    left: 10px;
+    top: 302px;
+    z-index: 3000;
+    color: #ccc;
+}
+
+.big_pic .length { /*图片数量说明*/
+    position: absolute;
+    right: 10px;
+    bottom: 4px;
+    z-index: 3000;
+    color: #ccc;
+}
+
+.big_pic .bg { /*图片文字说明和数量书名的div*/
+    width: 400px;
+    height: 25px;
+    background: #000;
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+    position: absolute;
+    z-index: 2999;
+    bottom: 0;
+    left: 0;
+}
+
+.small_pic { /*下面小图片的父div*/
+    width: 370px;
+    height: 94px;
+    position: relative;
+    margin: 5px;
+    top: 7px;
+    left: 10px;
+    overflow: hidden;
+}
+
+    .small_pic ul { /*小图片父div下的父ul*/
+        height: 94px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .small_pic li { /*小图片父div下的父ul li*/
+        width: 120px;
+        height: 94px;
+        float: left;
+        padding-right: 10px;
+        /*background: url("load.gif") no-repeat center center;*/
+        cursor: pointer;
+        filter: alpha(opacity=60);
+        opacity: 0.6;
+    }
+
+    .small_pic ul img { /*小图片的图片*/
+        width: 110px;
+        height: 95px;
+    }
