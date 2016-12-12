@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>第一个vue项目</title>
+	  <style type="text/css">
+	  * {
+	  	margin: 0;
+	  	padding: 0;
+	  }
+	  body {
+	  	background: rgb(240,240,240);
+	  }
+	  #budejie {
+	  	width: 910px;
+	  	margin: 0 auto;
+		}
+	  	p {
+	  		font-size: 18px;
+	  		color: black;
+	  		font-weight: bold;
+	  		margin-left: 15px;
+	  		margin-top: 10px;
+	  		margin-bottom: 10px;
+	  	}
+	    video {
+	  		margin-left: 15px;
+	  	}
+	  	span {
+	  		padding: 8px;
+	  		font-size: 15px;
+	  		margin-right: 20px;
+	  		padding: 20x;
+	  	}
+	  	span:last-child {
+	  		color: green;
+	  	}
+	  	span:first-of-type {
+	  		color: dodgerblue;
+	  	}
+	  	span:nth-of-type(2) {
+	  		color: purple;
+	  	}
+	  	#data {
+	  		margin-top: 10px;
+	  		margin-bottom: 15px;
+	  		margin-left: 15px;
+	  	}
+	  	#header {
+	  		height: 40px;
+	  		background: rgb(223,0,47);
+	  	}
+	  	h3 {
+	  		margin-left: 15px;
+	  		color: #FFFFFF;
+	  		padding-top: 12px;
+	  	}
+	  	ul {
+	  		list-style: none;	
+	  	}
+	  	li {	
+	  		width: 900px;
+	  		margin: 0 auto;
+	  		background: white;
+	  		padding: 5px;
+	  		margin-bottom: 10px;
+	  		border-radius: 7px;
+	  	}
+	  	.wrap {
+	  		width: 700px;
+	  		margin: 0 auto;
+	  	}
+	  </style>
+	</head>
+	<body>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	    <script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
+	    
+		<!--<div id="app">
+			<p>{{message}}</p>
+		</div>-->
+			<!--<script type="text/javascript">
+			new Vue ({
+				el: '#app',
+				data: {
+					message: 'hello Vue.js!'
+				}
+			});
+		</script>-->
+		<div id="budejie">
+			<div id="header">
+				<h3>精彩段子、视频</h3>
+			</div>
+			<ul>
+			<li v-for="item in items">
+				<div class="wrap">
+					<p>{{item.text}}</p>
+					<video width="700" height="420" v-bind:src="item.videoUrl" controls="controls">
+					your browser does not support the video tag
+					</video>
+					<div id="data">
+						<span> 点赞: {{item.up}} </span>
+						<span> 收藏: {{item.bookmark}} </span>
+						<span> 下载: {{item.down}} </span>
+						<span> 转发: {{item.forward}} </span>
+					</div>
+				</div>
+			</li>
+			</ul>
+		</div>
+	
+		<script type="text/javascript">
+			new Vue({
+				el: '#budejie',
+				data: {
+					message: 0,
+					items: [],
+				},
+				created: function() {
+					var data = '{"info": {"count": 10361, "np": 17292930321}, "list":[]}'
+					var obj = JSON.parse(data)
+					this.message = obj.info.np
+					this.items = obj.list
+					this.getList()
+				},
+				methods: {
+					getList: function() {
+						var vm = this
+						vm.$http.get('http://fountain.tike.bid/budejie/0-20.json')
+						.then((response)=> {
+							var videos = new Array()
+							var list = response.data.list	
+							for (i = 0; i < list.length; i++) {
+								item = list[i]
+								it = this.getData(item);
+								videos.push(it)
+							}					
+							vm.items = videos
+							vm.message = response.data.info.np			
+						})
+					},
+					getData: function(item) {
+						video = new Object()
+						// 设置video属性
+						video.text = item.text
+						video.bookmark = item.bookmark
+						video.up = item.up
+						video.down = item.down
+						video.forward = item.forward
+						if (item.hasOwnProperty("video")) {
+							// get video url
+							ivideo = item.video
+							if (ivideo.hasOwnProperty("video")) {
+								// 取video
+								video.videoUrl = ivideo.video[1]
+								} else if (ivideo.hasOwnProperty("z")) {
+								// 取z值
+								video.videoUrl = ivideo.z[1]
+								} else if (ivideo.hasOwnProperty("download")) {
+								// 取 download值
+								video.videoUrl = ivideo.download[1]
+								}
+								}
+						return video
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
